@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/team', 'HomeController@team')->name('team');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
 
 Route::group(['prefix' => 'admin'], function () {
