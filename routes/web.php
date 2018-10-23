@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/team', 'HomeController@team')->name('team');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/register', 'HomeController@register')->name('register');
+Route::post('/register', 'HomeController@addUser')->name('register');
 
 
 Route::group(['prefix' => 'admin'], function () {

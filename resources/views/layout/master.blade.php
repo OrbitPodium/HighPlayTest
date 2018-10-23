@@ -45,6 +45,15 @@
             <li class="nav-item @if($active == 'contact') active @endif px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{{route('contact')}}">Contactos</a>
             </li>
+            @if(Auth::user())
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('voyager.dashboard')}}">{{Auth::user()->name}}</a>
+            </li>
+            @else
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('voyager.dashboard')}}">Área Cliente</a>
+            </li>
+            @endif
           </ul>
         </div>
       </div>
