@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Equipa;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,8 @@ class HomeController extends Controller
 
     public function team() {
       $active='team';
-      return view('team', compact('active'));
+      $equipa=Equipa::all();
+      return view('team', compact('active', 'equipa'));
     }
 
     public function contact() {
